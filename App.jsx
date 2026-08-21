@@ -1,24 +1,24 @@
-import { Toaster } from "./components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClientInstance } from "./lib/query-client";
+import { queryClientInstance } from "@/lib/query-client";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import PageNotFound from "./lib/PageNotFound";
-import { AuthProvider } from "./lib/AuthContext";
-import ScrollToTop from "./components/ScrollToTop";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
-import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
-import Learn from "./pages/Learn";
-import Lesson from "./pages/Lesson";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import Flashcards from "./pages/Flashcards";
-import CodePlayground from "./pages/CodePlayground";
-import Minigames from "./pages/Minigames";
+import PageNotFound from "@/lib/PageNotFound";
+import { AuthProvider } from "@/lib/AuthContext";
+import ScrollToTop from "@/components/ScrollToTop";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import Login from "@/pages/Login";
+import Register from "@/pages/Register";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
+import Layout from "@/components/Layout";
+import Dashboard from "@/pages/Dashboard";
+import Learn from "@/pages/Learn";
+import Lesson from "@/pages/Lesson";
+import Projects from "@/pages/Projects";
+import ProjectDetail from "@/pages/ProjectDetail";
+import Flashcards from "@/pages/Flashcards";
+import CodePlayground from "@/pages/CodePlayground";
+import Minigames from "@/pages/Minigames";
 
 function App() {
   return (
