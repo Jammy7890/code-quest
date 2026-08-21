@@ -1,0 +1,78 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "javascript",
+        "typescript",
+        "gdscript"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "starter_code": {
+      "type": "string"
+    },
+    "hint": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "time_estimate": {
+      "type": "string"
+    },
+    "xp_reward": {
+      "type": "number",
+      "default": 50
+    },
+    "gem_reward": {
+      "type": "number",
+      "default": 8
+    }
+  },
+  "required": [
+    "language",
+    "title",
+    "description"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

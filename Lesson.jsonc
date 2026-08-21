@@ -1,0 +1,97 @@
+{
+  "name": "Lesson",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "string",
+      "enum": [
+        "python",
+        "javascript",
+        "typescript",
+        "gdscript"
+      ]
+    },
+    "track_order": {
+      "type": "number",
+      "default": 0
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "code_example": {
+      "type": "string"
+    },
+    "exercise_prompt": {
+      "type": "string"
+    },
+    "starter_code": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "hint": {
+      "type": "string"
+    },
+    "xp_reward": {
+      "type": "number",
+      "default": 10
+    },
+    "gem_reward": {
+      "type": "number",
+      "default": 3
+    },
+    "quiz_question": {
+      "type": "string"
+    },
+    "quiz_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quiz_answer_index": {
+      "type": "number"
+    },
+    "quiz_explanation": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "language",
+    "title",
+    "content"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

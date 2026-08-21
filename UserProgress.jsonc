@@ -1,0 +1,53 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "item_type": {
+      "type": "string",
+      "enum": [
+        "lesson",
+        "project"
+      ]
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "completed"
+      ],
+      "default": "in_progress"
+    },
+    "xp_earned": {
+      "type": "number",
+      "default": 0
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_code": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "item_type",
+    "item_id"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
