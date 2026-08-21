@@ -1,36 +1,25 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { useLocation } from 'react-router-dom';
+function PageNotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center">
+      <div className="space-y-3">
+        <h2 className="text-2xl font-medium text-slate-800">
+          Page Not Found
+        </h2>
+        <p className="text-slate-600">
+          The page you are looking for doesn't exist or has been moved.
+        </p>
+        <Link 
+          to="/" 
+          className="inline-block px-4 py-2 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-700"
+        >
+          Go Back Home
+        </Link>
+      </div>
+    </div>
+  );
+}
 
-import { useQuery } from '@tanstack/react-query';
-
-export default function PageNotFound({}) {
-    const location = useLocation();
-    const pageName = location.pathname.substring(1);
-
-    const { data: authData, isFetched } = useQuery({
-        queryKey: ['user'],
-        queryFn: async () => {
-            try {
-                const user = await db.auth.me();
-                return { user, isAuthenticated: true };
-            } catch (error) {
-                return { user: null, isAuthenticated: false };
-            }
-        }
-    });
-    
-    return (
-        <div className="min-h-screen flex items-center justify-center p-6 bg-slate-50">
-            <div className="max-w-md w-full">
-                <div className="text-center space-y-6">
-                    {/* 404 Error Code */}
-                    <div className="space-y-2">
-                        <h1 className="text-7xl font-light text-slate-300">404</h1>
-                        <div className="h-0.5 w-16 bg-slate-200 mx-auto"></div>
-                    </div>
-                    
-                    {/* Main Message */}
-                    <div className="space-y-3">
-                        <h2 className="text-2xl font-medium text-slate-800">
-                            Page Not Found
+export default PageNotFound;
