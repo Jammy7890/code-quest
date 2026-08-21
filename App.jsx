@@ -1,4 +1,3 @@
-import { Toaster } from "@/components/ui/toaster";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClientInstance } from "@/lib/query-client";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
@@ -33,7 +32,7 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
 
-            {/* Protected Routes inside Layout */}
+            {/* Protected Routes */}
             <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
               <Route element={<Layout />}>
                 <Route path="/" element={<Dashboard />} />
@@ -51,7 +50,6 @@ function App() {
             {/* 404 Catch-All */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>
-          <Toaster />
         </Router>
       </QueryClientProvider>
     </AuthProvider>
