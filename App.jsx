@@ -1,23 +1,25 @@
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClientInstance } from "@/lib/query-client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import PageNotFound from "@/lib/PageNotFound";
-import { AuthProvider } from "@/lib/AuthContext";
-import ScrollToTop from "@/components/ScrollToTop";
-import ProtectedRoute from "@/components/ProtectedRoute";
-import Login from "@/pages/Login";
-import Register from "@/pages/Register";
-import ForgotPassword from "@/pages/ForgotPassword";
-import ResetPassword from "@/pages/ResetPassword";
-import Layout from "@/components/Layout";
-import Dashboard from "@/pages/Dashboard";
-import Learn from "@/pages/Learn";
-import Lesson from "@/pages/Lesson";
-import Projects from "@/pages/Projects";
-import ProjectDetail from "@/pages/ProjectDetail";
-import Flashcards from "@/pages/Flashcards";
-import CodePlayground from "@/pages/CodePlayground";
-import Minigames from "@/pages/Minigames";
+import PageNotFound from "./PageNotFound";
+import { AuthProvider } from "./AuthContext";
+import ScrollToTop from "./ScrollToTop";
+import ProtectedRoute from "./ProtectedRoute";
+import Login from "./Login";
+import Register from "./Register";
+import ForgotPassword from "./ForgotPassword";
+import ResetPassword from "./ResetPassword";
+import Layout from "./Layout";
+import Dashboard from "./Dashboard";
+import Learn from "./Learn";
+import Lesson from "./Lesson";
+import Projects from "./Projects";
+import ProjectDetail from "./ProjectDetail";
+import Flashcards from "./Flashcards";
+import CodePlayground from "./CodePlayground";
+import Minigames from "./Minigames";
+
+// Initialize QueryClient directly in file so we don't rely on missing lib/ path
+const queryClientInstance = new QueryClient();
 
 function App() {
   return (
